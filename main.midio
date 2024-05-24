@@ -6,7 +6,7 @@ module Main {
     func SayHello {
         in trigger execute
         out trigger continue
-        instance foo Other.SayHello2 {}
+        instance foo Other.Main.SayHello2 {}
 
         execute -> foo.execute_0
         foo.continue_0 -> continue
