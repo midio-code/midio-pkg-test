@@ -1,0 +1,14 @@
+@midio_version("0.1.0")
+import("std", Std)
+
+module Main {
+    func SayHello2 {
+        in(x: -160, y: 0, name: "execute") trigger() execute_0
+        out(x: 80, y: 0, name: "continue") trigger() continue_0
+        instance(x: 0.0, y: 0.0, stableId: "iejlevtwjmz8eixr71tnn5n5") log_b815b7 root.Std.Std.Log { }
+        "Hello from remote package other file" -> log_b815b7.input
+        execute_0 -> log_b815b7.execute
+        log_b815b7.continue -> continue_0
+
+    }
+}

@@ -1,15 +1,15 @@
 @midio_version("0.1.0")
 import("std", Std)
+import("./other.midio", Other)
 
 module Main {
     func SayHello {
-        in(x: -160, y: 0, name: "execute") trigger() execute_0
-        out(x: 80, y: 0, name: "continue") trigger() continue_0
-        instance(x: 0.0, y: 0.0, stableId: "iejlevtwjmz8eixr71tnn5n5") log_b815b7 root.Std.Std.Log { }
-        "Hello from remote package" -> log_b815b7.input
-        execute_0 -> log_b815b7.execute
-        log_b815b7.continue -> continue_0
+        in trigger execute
+        out trigger continue
+        instance foo Other.SayHello2 {}
 
+        execute -> foo.execute_0
+        foo.continue_0 -> continue
     }
 }
 
